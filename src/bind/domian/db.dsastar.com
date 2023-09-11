@@ -1,14 +1,13 @@
 ;
-; BIND data file for local loopback interface
+; BIND data file for dsastar
 ;
-$TTL	604800
-@	IN	SOA	localhost. root.localhost. (
-			      2		; Serial
-			 604800		; Refresh
-			  86400		; Retry
-			2419200		; Expire
-			 604800 )	; Negative Cache TTL
+$TTL 1D
+@       IN      SOA     ns1.dsastar.com. admin.dsastar.com. (
+                                2023091101      ; Serial
+                                1D              ; Refresh
+                                2H              ; Retry
+                                1W              ; Expire
+                                1D )            ; Minimum TTL
 ;
-@	IN	NS	localhost.
-@	IN	A	127.0.0.1
-@	IN	AAAA	::1
+@       IN      NS      ns1.dsastar.com.
+@       IN      A       8.210.138.160

@@ -3,12 +3,3 @@ options {
     directory     "/var/named";
     allow-query { any; };    #允许所有人对本服务器发送DNS查询请求
 };
-
-zone "dsatsar.com" {
-    type master;
-    file "/data/db.dsastar.com";
-};
-
-include "/etc/bind/named.conf.options";
-include "/etc/bind/named.conf.local";
-include "/etc/bind/named.conf.default-zones";

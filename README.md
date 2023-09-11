@@ -30,7 +30,7 @@
 ## 使用
 ### 下載
 ```
-git clone 
+git clone https://github.com/dsastar/starPoint.git
 ```
 
 ### 使用方法

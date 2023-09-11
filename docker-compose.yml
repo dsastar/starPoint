@@ -1,25 +1,30 @@
 version: '3'
 services:
   bind:
-    image: ubuntu/bind9:latest
+    # image: ubuntu/bind9:latest
+    image: sameersbn/bind
+    restart: always
     ports:
       - "53:53"
+      - "953:953"
+      - "10000:10000" 
+    # volumes:
+    #   - ./src/bind/named.conf:/etc/bind/named.conf
+    #   - ./src/bind/named.conf.options:/etc/bind/named.conf.options
+    #   - ./src/bind/named.conf.local:/etc/bind/named.conf.local
+    #   - ./src/bind/named.conf.default-zones:/etc/bind/named.conf.default-zones
+    #   - ./src/bind/db.dsastar.com:/etc/bind/db.dsastar.com
+  nginx:
+    image: nginx:latest
+    ports:
+      - 80:80
     volumes:
-      - ./src/bind/named.conf:etc/bind/named.conf
-      - ./src/bind/named.conf.options:/etc/bind/named.conf.options
-      - ./src/bind/named.conf.local:/etc/bind/named.conf.local
-      - ./src/bind/named.conf.default-zones:/etc/bind/named.conf.default-zones
-      - ./src/bind/domain:/etc/bind/domain
-  # nginx:
-  #   image: nginx:latest
-  #   ports:
-  #     - 80:80
-  #   volumes:
-  #     - ./nginx/nginx.conf:/etc/nginx/nginx.conf
-  #   depends_on:
-  #     - bind9
-  #     - web
-  # web:
-  #   build: ./src/web
-  #   ports:
-  #     - "5004:5004"
+      - ./src/nginx/nginx.conf:/etc/nginx/nginx.conf
+    depends_on:
+      - bind
+      - web
+  web:
+    build: ./src/web
+    container_name: pythonWeb
+    ports:
+      - "5004:5004"

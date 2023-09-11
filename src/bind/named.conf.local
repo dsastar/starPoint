@@ -8,5 +8,6 @@
 
 zone "dsastar.com" {
 	type master;
-	file "/etc/bind/domain/db.dsastar.com";
+	file "/etc/bind/db.dsastar.com"; # zone file path
 };
+

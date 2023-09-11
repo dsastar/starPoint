@@ -6,8 +6,8 @@
 // organization
 //include "/etc/bind/zones.rfc1918";
 
-zone "dsastar.com" {
+zone "mydsastar.com" {
 	type master;
-	file "/etc/bind/db.dsastar.com"; # zone file path
+	file "/etc/bind/db.mydsastar.com";
 };
 

@@ -41,13 +41,10 @@ docker-compose up -d
 ## 查閱更多
 查看 [Change Log(更新日志)](docs/changelog.md) 
 
-## 參考
-
-# starPoint
 ## 使用方法
 ```
 docker-compose up -d
 ```
 
-# 參考資料
+## 參考資料
 - [bind域名dns解析及主从服务的配置](https://www.cnblogs.com/ssgeek/p/9220917.html)

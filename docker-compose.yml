@@ -1,25 +1,6 @@
-version: '3'
+version: '1'
+
 services:
-  bind:
-    image: ubuntu/bind9:latest
-    # image: sameersbn/bind
-    restart: always
-    ports:
-      - "53:53/tcp"
-      - "53:53/udp"
-      - "953:953"
-      # - "10000:10000"
-    # environment:
-    #   - WEBMIN_ENABLED=true
-    #   - WEBMIN_INIT_SSL_ENABLED=false
-    volumes:
-      # - /srv/docker/bind:/data
-      - ./src/bind/named.conf:/etc/bind/named.conf
-      - ./src/bind/named.conf.options:/etc/bind/named.conf.options
-      - ./src/bind/named.conf.local:/etc/bind/named.conf.local
-      - ./src/bind/named.conf.default-zones:/etc/bind/named.conf.default-zones
-      - ./src/bind/db.mydsastar.com:/etc/bind/db.mydsastar.com
-    
   nginx:
     image: nginx:latest
     ports:
@@ -27,7 +8,6 @@ services:
     volumes:
       - ./src/nginx/nginx.conf:/etc/nginx/nginx.conf
     depends_on:
-      - bind
       - web
   web:
     build: ./src/web

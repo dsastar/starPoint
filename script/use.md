@@ -2,6 +2,8 @@ ifconfig
 
 nslookup
 
+http://dsastar.com/
+
 dig 
 
 ns7.alidns.com
@@ -24,3 +26,4 @@ options {
     listen-on port 53 { any; };
     allow-query { any; };
     listen-on-v6 { any; };
+

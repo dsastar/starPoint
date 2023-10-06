@@ -14,7 +14,6 @@
 *
 ├── LICENSE 開源證明
 ├── test 測試用
-│   └── test2.txt
 ├── docs 相關文件
 │   ├── CHANGELOG.md 更新日志
 │   └── Logo
@@ -23,8 +22,7 @@
 ├── docker-compose.yml
 └── src 源代碼
     ├── web
-    ├── nginx 
-    └── bind
+    └── nginx 
 ```
 
 ## 使用
